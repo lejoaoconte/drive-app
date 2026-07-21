@@ -5,6 +5,11 @@ const config = {
   transform: {
     "^.+\\.(t|j)sx?$": ["@swc/jest"],
   },
+  moduleNameMapper: {
+    "^src/(.*)$": "<rootDir>/src/$1",
+    "^test/(.*)$": "<rootDir>/test/$1",
+    "^db/(.*)$": "<rootDir>/db/$1",
+  },
 };
 
 module.exports = config;

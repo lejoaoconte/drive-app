@@ -1,3 +1,12 @@
-export function sum(a: number, b: number): number {
-  return a + b;
-}
+//entry point
+
+import API from "./driver";
+
+import { AccountServiceProduction } from "./application";
+import AccountDAO from "./resource";
+
+const accountDAO = new AccountDAO();
+const accountService = new AccountServiceProduction(accountDAO);
+const api = new API(accountService);
+api.build();
+api.start();
